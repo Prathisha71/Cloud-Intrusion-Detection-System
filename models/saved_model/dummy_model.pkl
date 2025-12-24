@@ -1,0 +1,13 @@
+import joblib
+from sklearn.ensemble import RandomForestClassifier
+import pandas as pd
+
+df = pd.read_csv("data/processed/nslkdd_processed.csv")
+X = df.drop("label", axis=1)
+y = df["label"]
+
+model = RandomForestClassifier()
+model.fit(X, y)
+
+joblib.dump(model, "models/saved_model/dummy_model.pkl")
+print("Model saved!")

@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 🌈 Define color variables */
+:root {
+  --primary: #3b82f6;
+  --primary-foreground: #ffffff;
+}
+
+/* 🌞 Default (light mode) */
+body {
+  @apply bg-gray-50 text-gray-900 transition-colors duration-300 ease-in-out;
+}
+
+/* 🌙 Dark mode (applied when .dark class is on <body>) */
+body.dark {
+  @apply bg-gray-900 text-gray-100 transition-colors duration-300 ease-in-out;
+}
+
+/* Optional - smoother component transitions */
+.card,
+.button,
+.navbar,
+.sidebar {
+  @apply transition-colors duration-300 ease-in-out;
+}
